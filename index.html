@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using JSon Jquery</title>
+    <link rel="stylesheet" href="bulma-0.7.2/css/bulma.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+        <div class="container">
+                <div class="columns">
+                  <div class="column">
+                    <h1 class="title">WP Rest Api</h1>
+                    <p>url =>      http://Localhost:Port/wp-json/wp/v2/pages      or   posts </p>
+                    <p id="hstName"></p>
+                    <br />
+                    <input
+                      type="text"
+                      class="input is-primary"
+                      placeholder="Enter Url Api"
+                      name="url"
+                      id="url"
+                     
+                    />
+                    <br />
+                   
+                    <br />
+                    <input
+                      type="submit"
+                      class="button is-primary is-large "
+                      value="Submit"
+                      onclick="onClick()"
+                    />
+          
+                    <p class="spinner"></p>
+                    <div id="output" class="content"></div>
+                  </div>
+                </div>
+              </div>
+    <div class="columns" id="output">
+
+    </div>
+    <script src='https://unpkg.com/rxjs/bundles/rxjs.umd.min.js'></script>
+    <script src='app.js'></script>
+</body>
+</html>

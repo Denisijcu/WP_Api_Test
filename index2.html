@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="bulma-0.7.2/css/bulma.css" />
+    <title>WP Rest App Response</title>
+    <style>
+      *{
+          margin: 0;
+          box-sizing: border-box;
+
+      }
+      body {
+          margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">WP Rest Api</h1>
+          <p id="hstName"></p>
+          <br />
+          <input
+            type="text"
+            class="input is-primary"
+            placeholder="Enter Url Api"
+            name="url"
+            id="url"
+           
+          />
+          <br />
+         
+          <br />
+          <input
+            type="submit"
+            class="button is-primary is-large "
+            value="Submit"
+            onclick="onClick()"
+          />
+
+          <p class="spinner"></p>
+          <div id="output" class="content"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src=""></script>
+    <script>
+            function receiveData( data ) {
+              // Do something with the data here.
+              // For demonstration purposes, we'll simply log it.
+              //console.log( data );
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('Get','http://127.0.0.2/wp-json/wp/v2/pages', true);
+
+             xhr.onload = (res => {
+                 
+               if(this.status === 200){
+                   console.log('Good');
+               }
+            
+            });
+             xhr.send();
+
+            </script>
+            <script src="http://127.0.0.2/wp-json/wp/v2/pages?_jsonp=receiveData"></script>
+  </body>
+</html>
